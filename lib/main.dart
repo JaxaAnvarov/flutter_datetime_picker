@@ -1,3 +1,4 @@
+import 'package:date_time/home/datetime.dart';
 import 'package:date_time/home/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const DateTimee(),
     );
   }
 }
