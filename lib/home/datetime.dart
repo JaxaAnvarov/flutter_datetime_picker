@@ -9,7 +9,8 @@ class DateTimee extends StatefulWidget {
 }
 
 class _DateTimeeState extends State<DateTimee> {
-  DateTime dateTime = DateTime(2016, 8, 3, 17, 45);
+  DateTime dateTime = DateTime(2016, 08, 03, 17, 45);
+  DateTime? newDate;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _DateTimeeState extends State<DateTimee> {
               // Display a CupertinoDatePicker in dateTime picker mode.
               onPressed: () {
                 debugPrint(
-                    'Date time ${dateTime.month}-${dateTime.day}-${dateTime.year} ${dateTime.hour}:${dateTime.minute}');
+                    "Date time 'oy ${dateTime.month}- kun ${dateTime.day}- yil ${dateTime.year}  soat ${dateTime.hour}: minut${dateTime.minute}");
                 _showDialog(
                   CupertinoDatePicker(
                     initialDateTime: dateTime,
@@ -51,6 +52,7 @@ class _DateTimeeState extends State<DateTimee> {
               // format the value based on the user's locale settings.
               child: Text(
                 '${dateTime.month}-${dateTime.day}-${dateTime.year} ${dateTime.hour}:${dateTime.minute}',
+                // 'New  Date $dateTime',
                 style: const TextStyle(
                   fontSize: 22.0,
                 ),
