@@ -32,16 +32,21 @@ class _DateTimeeState extends State<DateTimee> {
             ),
             ElevatedButton(
               // Display a CupertinoDatePicker in dateTime picker mode.
-              onPressed: () => _showDialog(
-                CupertinoDatePicker(
-                  initialDateTime: dateTime,
-                  use24hFormat: true,
-                  // This is called when the user changes the dateTime.
-                  onDateTimeChanged: (DateTime newDateTime) {
-                    setState(() => dateTime = newDateTime);
-                  },
-                ),
-              ),
+              onPressed: () {
+                debugPrint(
+                    'Date time ${dateTime.month}-${dateTime.day}-${dateTime.year} ${dateTime.hour}:${dateTime.minute}');
+                _showDialog(
+                  CupertinoDatePicker(
+                    initialDateTime: dateTime,
+                    use24hFormat: true,
+                    // This is called when the user changes the dateTime.
+                    onDateTimeChanged: (DateTime newDateTime) {
+                      setState(() => dateTime = newDateTime);
+                      debugPrint("New Date Time $newDateTime");
+                    },
+                  ),
+                );
+              },
               // In this example, time value is formatted manually. You can use intl package to
               // format the value based on the user's locale settings.
               child: Text(
